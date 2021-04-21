@@ -1,0 +1,40 @@
+{
+	"UK1": {
+		"BOOHOO": {
+			"SKU1": {
+				"availableQuantity": 10,
+				"physicalQuantity": 12
+			}
+		},
+		"NAPA": {
+			"SKU2": {
+				"availableQuantity": 5,
+				"physicalQuantity": 5
+			},
+			"SKU3": {
+				"availableQuantity": 23,
+				"physicalQuantity": 30
+			}
+		}
+	},
+
+	"UK3": {
+		"BOOHOO": {
+			"SKU1": {
+				"availableQuantity": 1,
+				"physicalQuantity": 1
+			}
+		},
+		"NAPA": {
+			"SKU2": {
+				"availableQuantity": 3,
+				"physicalQuantity": 10
+			}
+		},
+		
+		"SKU3": {
+			"availableQuantity": 12,
+			"physicalQuantity": 15
+		}
+	}
+}

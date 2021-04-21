@@ -83,6 +83,7 @@ var myArray = [
 buildTable(myArray)
 
 function buildTable(data) {
+    
     let table = document.getElementById('myTable');
 
     for (let i = 0; i < data.length; i++ ) {
@@ -98,4 +99,7 @@ function buildTable(data) {
                     table.innerHTML += row
     }
 }
+
+
+
 
