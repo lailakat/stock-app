@@ -2,8 +2,6 @@
 
 const url = 'data/stock-response.json';
 
-
-
 async function fetchResponse() {
 
     const response = await fetch(url)
@@ -11,7 +9,9 @@ async function fetchResponse() {
 
     let dataArray = Object.values(data)
     
+    
     for (values of dataArray) {
+
         let sku = values.sku;
         let physicalWarehouse = values.physicalWarehouse;
         let logicalWarehouse = values.logicalWarehouse;
@@ -19,8 +19,12 @@ async function fetchResponse() {
         let availableToSell = values.availableToSell;
         let physicalStock = values.physicalWarehouse;
 
+        // let table = document.createElement("TABLE")
+        // table.getel
+
         let table = document.getElementById('myTable')
-        let row =
+        
+        table.innerHTML += 
                 `<tr>
                     <td>${sku}</td>
                     <td>${physicalWarehouse}</td>
@@ -28,9 +32,8 @@ async function fetchResponse() {
                     <td>${skuDescription}</td>
                     <td>${availableToSell}</td>
                     <td>${physicalStock}</td>
-                </tr>`
-
-        table.innerHTML += row
+                    </tr>
+                `
     }
 
 }
