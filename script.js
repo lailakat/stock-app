@@ -1,43 +1,38 @@
 // JSON DATA
 
-async function fetchRequest() {
+const url = 'data/stock-response.json';
 
-    const response = await fetch ("data/stock-request.json")
-    const keys = await response.json()
 
-    const response2 = await fetch ("data/stock-response.json")
-    const values = await response2.json()
 
+async function fetchResponse() {
+
+    const response = await fetch(url)
+    const data = await response.json()
+
+    let dataArray = Object.values(data)
     
+    for (values of dataArray) {
+        let sku = values.sku;
+        let physicalWarehouse = values.physicalWarehouse;
+        let logicalWarehouse = values.logicalWarehouse;
+        let skuDescription = values.skuDescription;
+        let availableToSell = values.availableToSell;
+        let physicalStock = values.physicalWarehouse;
 
-    let table = document.getElementById('myTable')
+        let table = document.getElementById('myTable')
+        let row =
+                `<tr>
+                    <td>${sku}</td>
+                    <td>${physicalWarehouse}</td>
+                    <td>${logicalWarehouse}</td>
+                    <td>${skuDescription}</td>
+                    <td>${availableToSell}</td>
+                    <td>${physicalStock}</td>
+                </tr>`
 
-    for (let value in keys.skus) {
-
-        let obj = keys.skus[value]
-    
-        // map obj keys with obj values here somehow 
-        
-        
-        console.log(values.UK1.BOOHOO)
-
-        let row = `<tr>
-                        <td>${obj}</td>
-                        <td>X</td>
-                        <td>X</td>
-                        <td>X</td>
-                        <td>X</td>
-                        <td>X</td>
-                    </tr>`
-
-            table.innerHTML += row
-
-        console.log(obj)
+        table.innerHTML += row
     }
 
 }
 
-
-
-fetchRequest()
-
+fetchResponse()

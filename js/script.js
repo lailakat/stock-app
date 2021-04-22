@@ -12,7 +12,7 @@ var myArray = [
         'physicalWarehouse': 'Wellingborough',
         'logicalWarehouse': 'Coast',
         'skuDescription': 'A pretty dress',
-        'availableToSell': '50',
+        'availableToSell': '30',
         'physicalStock': 'X'
     }, 
     {
@@ -85,6 +85,7 @@ buildTable(myArray)
 function buildTable(data) {
     
     let table = document.getElementById('myTable');
+    
 
     for (let i = 0; i < data.length; i++ ) {
         let row = `<tr>
