@@ -1,41 +1,124 @@
-// JSON DATA
 
-const url = 'data/stock-response.json';
+async function populateData() {
 
-async function fetchResponse() {
-
-    const response = await fetch(url)
-    const data = await response.json()
-
-    let dataArray = Object.values(data)
+    const productResponse = await fetch('./data/product-response.json');
     
+    const product = await productResponse.json()
+
+    const stockResponse = await fetch('./data/stock-response.json');
     
-    for (values of dataArray) {
+    const stock = await stockResponse.json()
 
-        let sku = values.sku;
-        let physicalWarehouse = values.physicalWarehouse;
-        let logicalWarehouse = values.logicalWarehouse;
-        let skuDescription = values.skuDescription;
-        let availableToSell = values.availableToSell;
-        let physicalStock = values.physicalWarehouse;
+    // product filtering (name and sku)
 
-        // let table = document.createElement("TABLE")
-        // table.getel
+    const products = Object.values(product)
 
-        let table = document.getElementById('myTable')
-        
-        table.innerHTML += 
-                `<tr>
-                    <td>${sku}</td>
-                    <td>${physicalWarehouse}</td>
-                    <td>${logicalWarehouse}</td>
-                    <td>${skuDescription}</td>
-                    <td>${availableToSell}</td>
-                    <td>${physicalStock}</td>
-                    </tr>
-                `
+     const productData = products.map(element => {
+
+        const sku = element.sku
+        const skuDescription = element.name
+
+        return {
+            sku,
+            skuDescription
+        }
+    }) 
+
+
+
+    // iterate over stock 
+
+    const stocks = Object.entries(stock)
+
+    const isObject = function(val) {
+        if (val === null) {
+            return false;
+        } 
+        return (typeof val === 'object')
     }
+
+    const objProps = (obj) => {
+        for (let val in obj) {       
+             if (isObject(obj[val])) {
+                 console.log(val, obj[val])
+                 objProps(obj[val])           
+            } else {
+              //  console.log(val, obj[val])
+            }
+        }    
+    }
+
+    objProps(stock)
+
+    // assign together
+
+
+
+    
+
 
 }
 
-fetchResponse()
+populateData()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// async function populateData() {
+
+//     
+
+
+//     const newArray = []
+//     newArray.push(data)
+
+//     console.log(newArray[0].skus)
+
+//     const values = newArray[0].skus
+
+//     let table = document.getElementById('myTable');
+
+//     for (let i = 0; i < values.length; i++) {
+//         const id = values[i];
+
+//         console.log(id)
+
+//         let row = `<tr>
+//             <td>${id}</td>
+//             <td>${id}</td>
+//             <td>${id}</td>
+//             <td>${id}</td>
+//             <td>${id}</td>
+//             <td>${id}</td>
+//         </tr>`
+
+
+//     table.innerHTML += row
+
+//     }
+
+// }
+
+
+// // learn about the
+
+
+// populateData()
+        
+        
+

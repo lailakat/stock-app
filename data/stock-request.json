@@ -1,7 +1,13 @@
 {
   "skus" : [
-    "SKU1",
-    "SKU2",
-    "SKU3"
+    {
+      "sku": "SKU1"
+    },
+    {
+      "sku": "SKU2"
+    },
+    {
+      "sku": "SKU3"
+    }
   ]
 }

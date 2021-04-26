@@ -1,0 +1,62 @@
+{
+    "SKU1": {
+      "sku": "SKU1",
+      "channel": "EN",
+      "name": "Helena Basic Contrast Waist Jersey Maxi Skirt",
+      "gender": "Female",
+      "gender_en": "Female",
+      "size": null,
+      "colour": null,
+      "group": "Skirts",
+      "created_at": "2015-09-16 14:30:04",
+      "updated_at": "2017-03-09 10:49:06",
+      "category": "Clothing",
+      "category_en": "Clothing",
+      "type": "style"
+    },
+    "SKU2": {
+      "sku": "SKU2",
+      "channel": "EN",
+      "name": "Helena Basic Contrast Waist Jersey Maxi Skirt",
+      "gender": "Female",
+      "gender_en": "Female",
+      "size": "6",
+      "colour": "BLACK",
+      "group": "Skirts",
+      "created_at": "2015-09-16 14:30:04",
+      "updated_at": "2017-03-09 10:49:06",
+      "category": "Clothing",
+      "category_en": "Clothing",
+      "type": "variant"
+    },
+    "SKU3": {
+      "sku": "SKU3",
+      "channel": "EN",
+      "name": "Helena Basic Contrast Waist Jersey Maxi Skirt",
+      "gender": "Female",
+      "gender_en": "Female",
+      "size": "8",
+      "colour": "RUST",
+      "group": "Skirts",
+      "created_at": "2015-09-16 14:30:04",
+      "updated_at": "2017-03-09 10:49:06",
+      "category": "Clothing",
+      "category_en": "Clothing",
+      "type": "variant"
+    },
+    "SKU4": {
+      "sku": "SKU4",
+      "channel": "EN",
+      "name": "Sophie Basic Scuba Box Pleat Skater Skirt",
+      "gender": "Female",
+      "gender_en": "Female",
+      "size": null,
+      "colour": null,
+      "group": "Skirts",
+      "created_at": "2015-09-16 14:30:04",
+      "updated_at": "2017-03-09 10:49:13",
+      "category": "Clothing",
+      "category_en": "Clothing",
+      "type": "style"
+    }
+  }
