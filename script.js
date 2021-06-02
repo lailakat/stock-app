@@ -1,124 +1,54 @@
-
 async function populateData() {
+    const productResponse = await fetch('/data/product-response.json');
+    const products = await productResponse.json();
+    const stockResponse = await fetch('/data/stock-response.json');
+    const stocks = await stockResponse.json();
 
-    const productResponse = await fetch('./data/product-response.json');
-    
-    const product = await productResponse.json()
+    let tableData = [];
 
-    const stockResponse = await fetch('./data/stock-response.json');
-    
-    const stock = await stockResponse.json()
-
-    // product filtering (name and sku)
-
-    const products = Object.values(product)
-
-     const productData = products.map(element => {
-
-        const sku = element.sku
-        const skuDescription = element.name
-
-        return {
-            sku,
-            skuDescription
-        }
-    }) 
-
-
-
-    // iterate over stock 
-
-    const stocks = Object.entries(stock)
-
-    const isObject = function(val) {
-        if (val === null) {
-            return false;
-        } 
-        return (typeof val === 'object')
-    }
-
-    const objProps = (obj) => {
-        for (let val in obj) {       
-             if (isObject(obj[val])) {
-                 console.log(val, obj[val])
-                 objProps(obj[val])           
-            } else {
-              //  console.log(val, obj[val])
+    // create table data
+    if (stocks.physicalWarehouses) {
+        for (let warehouse in stocks.physicalWarehouses) {
+            let physicalWarehouses = stocks.physicalWarehouses[warehouse];
+            for (var warehouseKey in physicalWarehouses) {
+                let brandsObj = physicalWarehouses[warehouseKey];
+                for (var brandKey in brandsObj) {
+                    // Loop through any SKU objects to build table data
+                    for (var sku in brandsObj[brandKey].skus) {
+                        tableData.push({
+                            sku: sku,
+                            warehouse: warehouse,
+                            brand: brandKey,
+                            skuDescription: products[sku].name,
+                            availableQuantity: brandsObj[brandKey].skus[sku].availableQuantity,
+                            physicalQuantity: brandsObj[brandKey].skus[sku].physicalQuantity
+                        });
+                    }
+                }
             }
-        }    
+        }
     }
 
-    objProps(stock)
+    // create table
+    if (tableData.length > 0) {
+        let table = document.getElementById('myTable');
 
-    // assign together
+        for (let i = 0; i < tableData.length; i++) {
 
+            let row = `<tr>
+                        <td>${tableData[i].sku}</td>
+                        <td>${tableData[i].warehouse}</td>
+                        <td>${tableData[i].brand}</td>
+                        <td>${tableData[i].skuDescription}</td>
+                        <td>${tableData[i].availableQuantity}</td>
+                        <td>${tableData[i].physicalQuantity}</td>
+                    </tr>`
 
-
-    
-
-
+            table.innerHTML += row
+        }
+    }
 }
 
 populateData()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// async function populateData() {
-
-//     
-
-
-//     const newArray = []
-//     newArray.push(data)
-
-//     console.log(newArray[0].skus)
-
-//     const values = newArray[0].skus
-
-//     let table = document.getElementById('myTable');
-
-//     for (let i = 0; i < values.length; i++) {
-//         const id = values[i];
-
-//         console.log(id)
-
-//         let row = `<tr>
-//             <td>${id}</td>
-//             <td>${id}</td>
-//             <td>${id}</td>
-//             <td>${id}</td>
-//             <td>${id}</td>
-//             <td>${id}</td>
-//         </tr>`
-
-
-//     table.innerHTML += row
-
-//     }
-
-// }
-
-
-// // learn about the
-
-
-// populateData()
-        
         
 

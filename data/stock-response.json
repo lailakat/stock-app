@@ -1,38 +1,52 @@
-{
-	"UK1": {
-		"BOOHOO": {
-			"SKU1": {
+{  
+	"physicalWarehouses": {
+	  "UK1": {
+		"brands": {
+		  "BOOHOO": {
+			"skus": {
+			  "AZZ12345-555-33": {
 				"availableQuantity": 10,
 				"physicalQuantity": 12
+			  }
 			}
-		},
-		"NAPA": {
-			"SKU2": {
+		  },
+		  "NAPA": {
+			"skus": {
+			  "AGG23456-333-55": {
 				"availableQuantity": 5,
 				"physicalQuantity": 5
-			},
-			"SKU3": {
+			  },
+			  "AGG23456-111-51": {
 				"availableQuantity": 23,
 				"physicalQuantity": 30
+			  }
 			}
+		  }
 		}
-	},
-	"UK3": {
-		"BOOHOO": {
-			"SKU1": {
+	  },
+	  "UK3": {
+		"brands": {
+		  "BOOHOO": {
+			"skus": {
+			  "AZZ12345-123-67": {
 				"availableQuantity": 1,
 				"physicalQuantity": 1
+			  }
 			}
-		},
-		"NAPA": {
-			"SKU2": {
+		  },
+		  "NAPA": {
+			"skus": {
+			  "AGG23456-333-55": {
 				"availableQuantity": 3,
 				"physicalQuantity": 10
-			},
-			"SKU3": {
+			  },
+			  "AGG23456-434-10": {
 				"availableQuantity": 12,
 				"physicalQuantity": 15
+			  }
 			}
-		}
-	}
+		  }
+	  }
+  }
 }
+}        
