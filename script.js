@@ -6,6 +6,8 @@ async function populateData() {
 
     let tableData = [];
 
+
+
     // create table data
     if (stocks.physicalWarehouses) {
         for (let warehouse in stocks.physicalWarehouses) {
@@ -15,6 +17,11 @@ async function populateData() {
                 for (var brandKey in brandsObj) {
                     // Loop through any SKU objects to build table data
                     for (var sku in brandsObj[brandKey].skus) {
+
+                        
+                        console.log(sku)
+
+
                         tableData.push({
                             sku: sku,
                             warehouse: warehouse,
@@ -48,6 +55,8 @@ async function populateData() {
         }
     }
 }
+
+
 
 populateData()
         
