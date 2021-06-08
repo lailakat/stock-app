@@ -1,52 +1,104 @@
-{  
+{
 	"physicalWarehouses": {
-	  "UK1": {
-		"brands": {
-		  "BOOHOO": {
-			"skus": {
-			  "AZZ12345-555-33": {
-				"availableQuantity": 10,
-				"physicalQuantity": 12
-			  }
+		"UK1": {
+			"brands": {
+				"NAPA": {
+					"skus": {
+						"AGG58952-119-14": {
+							"availableQuantity": -4,
+							"physicalQuantity": 0
+						},
+						"AGG95233-107-18": {
+							"availableQuantity": 200,
+							"physicalQuantity": 0
+						},
+						"AGG95684-157-56": {
+							"availableQuantity": 0,
+							"physicalQuantity": -10
+						},
+						"AGG77429-173-12": {
+							"availableQuantity": 9,
+							"physicalQuantity": 0
+						},
+						"AGG88576-135-14": {
+							"availableQuantity": 123,
+							"physicalQuantity": -6
+						}
+					}
+				},
+				"COAST": {
+					"skus": {
+						"ACC99167-144-24": {
+							"availableQuantity": 5,
+							"physicalQuantity": 0
+						},
+						"ACC99998-105-20": {
+							"availableQuantity": 22,
+							"physicalQuantity": -10
+						},
+						"ACC99994-105-16": {
+							"availableQuantity": -1,
+							"physicalQuantity": 0
+						},
+						"ACC99998-107-14": {
+							"availableQuantity": 0,
+							"physicalQuantity": -3
+						}
+					}
+				}
 			}
-		  },
-		  "NAPA": {
-			"skus": {
-			  "AGG23456-333-55": {
-				"availableQuantity": 5,
-				"physicalQuantity": 5
-			  },
-			  "AGG23456-111-51": {
-				"availableQuantity": 23,
-				"physicalQuantity": 30
-			  }
+		},
+		"UK3": {
+			"brands": {
+				"NAPA": {
+					"skus": {
+						"AGG58952-119-14": {
+							"availableQuantity": 6,
+							"physicalQuantity": 0
+						},
+						"AGG95233-107-18": {
+							"availableQuantity": 12,
+							"physicalQuantity": 0
+						},
+						"AGG95684-157-56": {
+							"availableQuantity": 0,
+							"physicalQuantity": 10
+						},
+						"AGG88576-135-14": {
+							"availableQuantity": 1,
+							"physicalQuantity": 0
+						}
+					}
+				},
+				"COAST": {
+					"skus": {
+						"ACC99907-105-18": {
+							"availableQuantity": 5,
+							"physicalQuantity": 0
+						},
+						"ACC99998-105-20": {
+							"availableQuantity": 816,
+							"physicalQuantity": -20
+						},
+						"ACC99994-105-16": {
+							"availableQuantity": 18,
+							"physicalQuantity": -1
+						},
+						"ACC99991-156-14": {
+							"availableQuantity": 34,
+							"physicalQuantity": 0
+						},
+						"ACC99998-107-14": {
+							"availableQuantity": 0,
+							"physicalQuantity": 3
+						},
+						"ACC99991-156-16": {
+							"availableQuantity": 10,
+							"physicalQuantity": 0
+						}
+					}
+				}
 			}
-		  }
 		}
-	  },
-	  "UK3": {
-		"brands": {
-		  "BOOHOO": {
-			"skus": {
-			  "AZZ12345-123-67": {
-				"availableQuantity": 1,
-				"physicalQuantity": 1
-			  }
-			}
-		  },
-		  "NAPA": {
-			"skus": {
-			  "AGG23456-333-55": {
-				"availableQuantity": 3,
-				"physicalQuantity": 10
-			  },
-			  "AGG23456-434-10": {
-				"availableQuantity": 12,
-				"physicalQuantity": 15
-			  }
-			}
-		  }
-	  }
+	}
   }
-}
-}        
